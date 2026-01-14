@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Calendar, DollarSign, FileText, Tag, ArrowLeft } from 'lucide-react';
+import { Calendar, FileText, Tag, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 interface Category {
@@ -64,8 +64,8 @@ export default function TransactionForm({ categories }: { categories: Category[]
                             type="button"
                             onClick={() => setFormData({ ...formData, type: 'income', category_id: '' })}
                             className={`py-2 rounded-lg font-medium transition-all ${formData.type === 'income'
-                                    ? 'bg-white text-emerald-600 shadow-sm'
-                                    : 'text-slate-500 hover:text-slate-700'
+                                ? 'bg-white text-emerald-600 shadow-sm'
+                                : 'text-slate-500 hover:text-slate-700'
                                 }`}
                         >
                             Income
@@ -74,8 +74,8 @@ export default function TransactionForm({ categories }: { categories: Category[]
                             type="button"
                             onClick={() => setFormData({ ...formData, type: 'expense', category_id: '' })}
                             className={`py-2 rounded-lg font-medium transition-all ${formData.type === 'expense'
-                                    ? 'bg-white text-rose-600 shadow-sm'
-                                    : 'text-slate-500 hover:text-slate-700'
+                                ? 'bg-white text-rose-600 shadow-sm'
+                                : 'text-slate-500 hover:text-slate-700'
                                 }`}
                         >
                             Expense
@@ -86,7 +86,7 @@ export default function TransactionForm({ categories }: { categories: Category[]
                     <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">Amount</label>
                         <div className="relative">
-                            <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₱</span>
                             <input
                                 type="number"
                                 step="0.01"

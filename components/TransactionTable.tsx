@@ -42,7 +42,7 @@ export default function TransactionTable({ transactions, showActions = true }: T
         <div className="glass-card overflow-hidden">
             <div className="overflow-x-auto">
                 <table className="w-full text-sm text-left">
-                    <thead className="bg-slate-50 text-slate-500 uppercase font-medium">
+                    <thead className="bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-300 uppercase font-medium">
                         <tr>
                             <th className="px-6 py-4">Date</th>
                             <th className="px-6 py-4">Description</th>
@@ -51,28 +51,28 @@ export default function TransactionTable({ transactions, showActions = true }: T
                             {showActions && <th className="px-6 py-4 text-center">Actions</th>}
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100">
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
                         {transactions.length === 0 ? (
                             <tr>
-                                <td colSpan={showActions ? 5 : 4} className="px-6 py-8 text-center text-slate-500">
+                                <td colSpan={showActions ? 5 : 4} className="px-6 py-8 text-center text-slate-500 dark:text-slate-400">
                                     No transactions found.
                                 </td>
                             </tr>
                         ) : (
                             transactions.map((t) => (
-                                <tr key={t.id} className="hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-6 py-4 text-slate-600">
+                                <tr key={t.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-700/50 transition-colors">
+                                    <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                                         {new Date(t.date).toLocaleDateString()}
                                     </td>
-                                    <td className="px-6 py-4 font-medium text-slate-800">{t.description}</td>
+                                    <td className="px-6 py-4 font-medium text-slate-800 dark:text-slate-200">{t.description}</td>
                                     <td className="px-6 py-4 text-slate-500">
-                                        <span className="px-2 py-1 rounded-full text-xs bg-slate-100 text-slate-600">
+                                        <span className="px-2 py-1 rounded-full text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
                                             {t.category_name || 'Uncategorized'}
                                         </span>
                                     </td>
-                                    <td className={`px-6 py-4 text-right font-bold ${t.type === 'income' ? 'text-emerald-600' : 'text-rose-600'
+                                    <td className={`px-6 py-4 text-right font-bold ${t.type === 'income' ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'
                                         }`}>
-                                        {t.type === 'income' ? '+' : '-'}${t.amount.toLocaleString()}
+                                        {t.type === 'income' ? '+' : '-'}₱{t.amount.toLocaleString()}
                                     </td>
                                     {showActions && (
                                         <td className="px-6 py-4 text-center">

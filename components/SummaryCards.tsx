@@ -15,8 +15,8 @@ export default function SummaryCards({ income, expense, balance }: SummaryCardsP
                     <Wallet className="w-24 h-24 text-blue-600" />
                 </div>
                 <div className="relative z-10">
-                    <p className="text-slate-500 font-medium mb-1">Total Balance</p>
-                    <h3 className="text-3xl font-bold text-slate-800">${balance.toLocaleString()}</h3>
+                    <p className="text-slate-500 dark:text-slate-400 font-medium mb-1">Total Balance</p>
+                    <h3 className="text-3xl font-bold text-slate-800">₱{balance.toLocaleString()}</h3>
                 </div>
             </div>
 
@@ -26,8 +26,8 @@ export default function SummaryCards({ income, expense, balance }: SummaryCardsP
                     <ArrowUpCircle className="w-24 h-24 text-emerald-600" />
                 </div>
                 <div className="relative z-10">
-                    <p className="text-slate-500 font-medium mb-1">Total Income</p>
-                    <h3 className="text-3xl font-bold text-emerald-600">+${income.toLocaleString()}</h3>
+                    <p className="text-slate-500 dark:text-slate-400 font-medium mb-1">Total Income</p>
+                    <h3 className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">+₱{income.toLocaleString()}</h3>
                 </div>
             </div>
 
@@ -37,8 +37,8 @@ export default function SummaryCards({ income, expense, balance }: SummaryCardsP
                     <ArrowDownCircle className="w-24 h-24 text-rose-600" />
                 </div>
                 <div className="relative z-10">
-                    <p className="text-slate-500 font-medium mb-1">Total Expenses</p>
-                    <h3 className="text-3xl font-bold text-rose-600">-${expense.toLocaleString()}</h3>
+                    <p className="text-slate-500 dark:text-slate-400 font-medium mb-1">Total Expenses</p>
+                    <h3 className="text-3xl font-bold text-rose-600 dark:text-rose-400">-₱{expense.toLocaleString()}</h3>
                 </div>
             </div>
         </div>

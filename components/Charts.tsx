@@ -40,7 +40,7 @@ export function ExpensePieChart({ data }: ExpensePieChartProps) {
                         ))}
                     </Pie>
                     <RechartsTooltip
-                        formatter={(value: any) => `$${Number(value).toLocaleString()}`}
+                        formatter={(value: any) => `₱${Number(value).toLocaleString()}`}
                         contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                     />
                     <Legend />
@@ -72,7 +72,7 @@ export function IncomeExpenseBarChart({ data }: { data: MonthlyData[] }) {
                 >
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
                     <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
-                    <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} tickFormatter={(val) => `$${val}`} />
+                    <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} tickFormatter={(val) => `₱${val}`} />
                     <RechartsTooltip
                         cursor={{ fill: '#f1f5f9' }}
                         contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}

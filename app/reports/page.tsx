@@ -37,7 +37,7 @@ export default async function ReportsPage() {
                             <div key={cat.name} className="flex justify-between items-center p-3 hover:bg-slate-50 rounded-lg transition-colors">
                                 <span className="font-medium text-slate-700">{cat.name}</span>
                                 <div className="text-right">
-                                    <div className="font-bold text-slate-800">${cat.value.toLocaleString()}</div>
+                                    <div className="font-bold text-slate-800">₱{cat.value.toLocaleString()}</div>
                                     <div className="text-xs text-slate-400">
                                         {Math.round((cat.value / summary.expense) * 100)}% of expenses
                                     </div>

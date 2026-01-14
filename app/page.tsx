@@ -18,10 +18,10 @@ export default async function Dashboard() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600">
+          <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-200 dark:to-slate-400">
             Financial Dashboard
           </h1>
-          <p className="text-slate-500 mt-1">Overview of your financial health.</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">Overview of your financial health.</p>
         </div>
         <Link
           href="/transactions/new"
@@ -44,8 +44,8 @@ export default async function Dashboard() {
         {/* Recent Transactions */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold text-slate-800">Recent Transactions</h2>
-            <Link href="/transactions" className="text-sm text-blue-600 hover:text-blue-700 font-medium">
+            <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200">Recent Transactions</h2>
+            <Link href="/transactions" className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium">
               View All &rarr;
             </Link>
           </div>
@@ -54,7 +54,7 @@ export default async function Dashboard() {
 
         {/* Categories Chart */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-slate-800">Expenses by Category</h2>
+          <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200">Expenses by Category</h2>
           <div className="glass-card p-6">
             <ExpensePieChart data={expensesByCategory} />
           </div>

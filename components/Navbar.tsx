@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, Receipt, PieChart, BarChart3, Wallet } from 'lucide-react';
 import clsx from 'clsx';
+import ThemeToggle from './ThemeToggle';
 
 const navItems = [
     { name: 'Dashboard', href: '/', icon: LayoutDashboard },
@@ -38,8 +39,8 @@ export default function Navbar() {
                                 className={clsx(
                                     'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
                                     isActive
-                                        ? 'bg-blue-50 text-blue-700 shadow-sm'
-                                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                                        ? 'bg-blue-50 text-blue-700 shadow-sm dark:bg-blue-900/30 dark:text-blue-300'
+                                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100'
                                 )}
                             >
                                 <Icon className="w-4 h-4" />
@@ -48,6 +49,8 @@ export default function Navbar() {
                         );
                     })}
                 </div>
+
+                <ThemeToggle />
             </div>
         </nav>
     );
